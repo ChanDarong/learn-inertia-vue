@@ -9,6 +9,10 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/login', function () {
+    return Inertia::render('Auth/Login');
+});
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });

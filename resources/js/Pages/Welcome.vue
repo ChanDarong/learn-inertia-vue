@@ -1,15 +1,22 @@
 <template>
-  <div class="container h-full flex items-center justify-center">
-    <div>
-        <h1>Welcome to Inertia Vue!</h1>
-        <p>This is your first Inertia page.</p>
+  <div class="w-full h-[100vh] flex items-center justify-center">
+    <div class="text-center">
+        <h1 class="h1 my-4">{{ message }}</h1>
+        <Button>
+            <Link href="/login">Login</Link>
+        </Button>
     </div>
   </div>
 </template>
 
 <script setup>
-// You can add reactive data, computed properties, etc. here
 import { ref } from 'vue'
+import { Button } from '@/components/ui/button';
+import { Link } from '@inertiajs/vue3';
 
-const message = ref('Hello from Vue!')
+const props = defineProps({
+    message: {
+        type: String
+    }
+});
 </script>
